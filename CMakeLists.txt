@@ -15,5 +15,15 @@ set(CMAKE_C_EXTENSIONS              OFF)
 
 set(EXECUTABLE_NAME serial_communication_protocols)
 
+include(FetchContent)
+FetchContent_Declare(
+        spdlog
+        GIT_REPOSITORY              https://github.com/gabime/spdlog.git
+        GIT_TAG                     v1.14.1
+        GIT_SHALLOW                 TRUE
+)
+FetchContent_MakeAvailable(spdlog)
+
 add_subdirectory(configured)
+#add_subdirectory(protocols)
 add_subdirectory(service)
